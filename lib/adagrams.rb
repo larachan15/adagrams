@@ -6,33 +6,42 @@ end
 
 def shuffle_letters
   letter = stores_letters.shuffle.pop(10)
-  return letter
+  return letter.join(' , ')
 end
 
 
 def welcome
   puts "Welcome to adagrams. Here are your letters."
-  return shuffle_letters.join(' , ')
+  shuffle_letters
 end
 
 
 puts welcome
-puts "Based on these letters, give us a word."
-print "Word: "
-user_input = gets.chomp
 
-#
-# def uses_available_letters(user_input, draw_letters)
-#   letters = user_input.chars.to_a
-#   if letters.include?(welcome) == true
-#     puts "yay"
-#   end
-#   binding.pry
-#   # letters_in_hand = draw_letters
-#   # input = user_input.slice(0..9)
-#   # test = letters_in_hand.include?(user_input)
-#   # return test
-# end
+def game_instructions
+  puts "Based on these letters, give us a word."
+  print "Word: "
+end
 
+def get_user_input
+  user_input = gets.chomp
+end
 
-# puts uses_available_letters(user_input, draw_letters)
+# wave 2
+def uses_available_letters(get_user_input, shuffle_letters)
+  user_input = get_user_input.upcase.split("")
+  if user_input.include?(shuffle_letters) == true
+  else
+    puts "You entered in a word that contains characters not in the letter bank"
+    game_instructions
+    get_user_input
+  end
+end
+
+puts uses_available_letters(user_input, shuffle_letters)
+
+# binding.pry
+# letters_in_hand = draw_letters
+# input = user_input.slice(0..9)
+# test = letters_in_hand.include?(user_input)
+# return test
