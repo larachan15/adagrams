@@ -4,19 +4,20 @@ def stores_letters
   letters = [ "A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "F", "F", "G", "G", "G", "H", "H", "I", "I", "I", "I", "I", "I", "I", "I", "I", "J", "K", "L", "L", "L", "L", "M", "M", "N", "N", "N", "N", "N", "N", "O", "O", "O", "O", "O", "O", "O", "O", "P", "P", "Q", "R", "R", "R", "R", "R", "R", "S", "S", "S", "S", "T", "T", "T", "T", "T", "T", "U", "U", "U", "U", "V", "V", "W", "W", "X", "Y", "Y", "Z" ]
 end
 
-def shuffle_letters
+def draw_letters
   letter = stores_letters.shuffle.pop(10)
-  return letter.join(' , ')
+  return letter
 end
 
 
 def welcome
   puts "Welcome to adagrams. Here are your letters."
-  shuffle_letters
+  draw_letters
 end
 
 
 puts welcome
+# binding.pry
 
 def game_instructions
   puts "Based on these letters, give us a word."
@@ -38,7 +39,9 @@ def uses_available_letters(get_user_input, shuffle_letters)
   end
 end
 
-puts uses_available_letters(user_input, shuffle_letters)
+# puts uses_available_letters(get_user_input, shuffle_letters)
+
+
 
 # binding.pry
 # letters_in_hand = draw_letters
