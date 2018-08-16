@@ -15,12 +15,6 @@ def welcome
 end
 
 
-<<<<<<< HEAD
-puts welcome
-# binding.pry
-
-=======
->>>>>>> 6cd1df6ab0a2f26a4ffd1009742f6ea5f0397af2
 def game_instructions
   puts "Based on these letters, give us a word."
   print "Word: "
@@ -44,17 +38,7 @@ def uses_available_letters?(input, letters_in_hand)
   return true
 end
 
-<<<<<<< HEAD
-# puts uses_available_letters(get_user_input, shuffle_letters)
 
-
-
-# binding.pry
-# letters_in_hand = draw_letters
-# input = user_input.slice(0..9)
-# test = letters_in_hand.include?(user_input)
-# return test
-=======
 # wave 3
 def score_word(word)
   score = 0
@@ -82,6 +66,5 @@ def score_word(word)
   if bonus_length.include?(word.length)
     score += 8
   end
-  return score 
+  return score
 end
->>>>>>> 6cd1df6ab0a2f26a4ffd1009742f6ea5f0397af2
