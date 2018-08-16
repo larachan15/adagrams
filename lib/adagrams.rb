@@ -26,10 +26,10 @@ def game_instructions
   print "Word: "
 end
 
-def get_user_input
-  user_input = gets.chomp
-  return user_input
-end
+# def get_user_input
+#   user_input = gets.chomp
+#   return user_input
+# end
 
 # wave 2
 def uses_available_letters?(input, letters_in_hand)
@@ -57,5 +57,31 @@ end
 =======
 # wave 3
 def score_word(word)
+  score = 0
+
+  score_hash = {
+    "A" => 1,
+    "E" => 1,
+    "I" => 1,
+    "D" => 2,
+    "G" => 2,
+    "O" => 1,
+    "W" => 4,
+    "H" => 4,
+    "M" => 3,
+    "S" => 1,
+    "Y" => 4,
+    "X" => 8
+  }
+
+  word = word.upcase.split("")
+  word.each do |letter|
+    score += score_hash[letter]
+  end
+  bonus_length = [7, 8, 9, 10]
+  if bonus_length.include?(word.length)
+    score += 8
+  end
+  return score 
 end
 >>>>>>> 6cd1df6ab0a2f26a4ffd1009742f6ea5f0397af2
