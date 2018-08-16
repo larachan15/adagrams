@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 # wave 1
 def stores_letters
   letters = [ "A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "F", "F", "G", "G", "G", "H", "H", "I", "I", "I", "I", "I", "I", "I", "I", "I", "J", "K", "L", "L", "L", "L", "M", "M", "N", "N", "N", "N", "N", "N", "O", "O", "O", "O", "O", "O", "O", "O", "P", "P", "Q", "R", "R", "R", "R", "R", "R", "S", "S", "S", "S", "T", "T", "T", "T", "T", "T", "U", "U", "U", "U", "V", "V", "W", "W", "X", "Y", "Y", "Z" ]
@@ -82,4 +82,48 @@ def score_word(word)
   return score
 end
 
-# wave 4
+#
+# # wave 4
+def highest_score_from(words)
+  winning_word_and_score = {}
+  best_word = nil # array to store hashes of user word and it's score
+  max_score = 0
+  max_word = ""
+  max_scores = []
+
+
+binding.pry
+  words.each do |word|
+    score = score_word(word)
+
+    if word[:score] > max_score
+      max_score = word[:score]
+      max_word = word[:word]
+      best_word << {word: max_word, score: max_score}
+    end
+    return
+
+  end
+
+
+
+binding.pry
+  #
+  # word_and_score.each do |highest_score|
+  #   if highest_score[:score] == max_score
+  #     best_word = highest_score[:word]
+  #     max_scores << {word: best_word, score: max_score}
+  #   end
+  # end
+# binding.pry
+# puts highest_score_from
+
+# best_words = highest_score_from
+#
+#
+# highest_score = 0
+# score_word.each do |score|
+#
+#
+# return hash
+end
