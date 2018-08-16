@@ -46,15 +46,29 @@ def score_word(word)
     "A" => 1,
     "E" => 1,
     "I" => 1,
+    "O" => 1,
+    "U" => 1,
+    "L" => 1,
+    "N" => 1,
+    "R" => 1,
+    "S" => 1,
+    "T" => 1,
     "D" => 2,
     "G" => 2,
-    "O" => 1,
-    "W" => 4,
-    "H" => 4,
+    "B" => 3,
+    "C" => 3,
     "M" => 3,
-    "S" => 1,
+    "P" => 3,
+    "F" => 4,
+    "H" => 4,
+    "V" => 4,
+    "W" => 4,
     "Y" => 4,
-    "X" => 8
+    "K" => 5,
+    "J" => 8,
+    "X" => 8,
+    "Q" => 10,
+    "Z" => 10
   }
 
   word = word.upcase.split("")
@@ -65,5 +79,7 @@ def score_word(word)
   if bonus_length.include?(word.length)
     score += 8
   end
-  return score 
+  return score
 end
+
+# wave 4
