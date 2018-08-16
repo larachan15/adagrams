@@ -9,16 +9,18 @@ def draw_letters
   return letter
 end
 
-
 def welcome
   puts "Welcome to adagrams. Here are your letters."
   draw_letters
 end
 
 
+<<<<<<< HEAD
 puts welcome
 # binding.pry
 
+=======
+>>>>>>> 6cd1df6ab0a2f26a4ffd1009742f6ea5f0397af2
 def game_instructions
   puts "Based on these letters, give us a word."
   print "Word: "
@@ -26,19 +28,23 @@ end
 
 def get_user_input
   user_input = gets.chomp
+  return user_input
 end
 
 # wave 2
-def uses_available_letters(get_user_input, shuffle_letters)
-  user_input = get_user_input.upcase.split("")
-  if user_input.include?(shuffle_letters) == true
-  else
-    puts "You entered in a word that contains characters not in the letter bank"
-    game_instructions
-    get_user_input
+def uses_available_letters?(input, letters_in_hand)
+  input = input.upcase.split("")
+  input.each do |letter|
+    if letters_in_hand.include?(letter)
+      letters_in_hand.delete(letter)
+    else
+      return false
+    end
   end
+  return true
 end
 
+<<<<<<< HEAD
 # puts uses_available_letters(get_user_input, shuffle_letters)
 
 
@@ -48,3 +54,8 @@ end
 # input = user_input.slice(0..9)
 # test = letters_in_hand.include?(user_input)
 # return test
+=======
+# wave 3
+def score_word(word)
+end
+>>>>>>> 6cd1df6ab0a2f26a4ffd1009742f6ea5f0397af2
