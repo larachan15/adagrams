@@ -83,12 +83,8 @@ def score_word(word)
   end
   return score
 
-<<<<<<< HEAD
-# # wave 4
-=======
 
 # wave 4
->>>>>>> a822e4ea4fb8cda5a14f226af452d912f1b5e282
 def highest_score_from(words)
 
   winning_word_and_score = {
