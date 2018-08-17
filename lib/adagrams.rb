@@ -93,6 +93,7 @@ def highest_score_from(words)
 
   words.each do |word|
     score = score_word(word)
+
     if score > winning_word_and_score[:score]
       winning_word_and_score[:score] = score
       winning_word_and_score[:word] = word
