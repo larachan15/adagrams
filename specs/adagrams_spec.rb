@@ -171,6 +171,17 @@ describe 'Adagrams' do
       expect(best_word[:word]).must_equal words.first
       expect(best_word[:score]).must_equal 18
     end
+
+    it 'if the user_input is in the dictionary' do
+      # Arrange
+      user_input = 'CAT'
+
+      # Act
+      result = is_in_english_dict?(user_input)
+
+      # Assert
+      expect(result).must_equal true
+    end
   end
 
 end

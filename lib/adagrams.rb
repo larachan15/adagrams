@@ -1,4 +1,4 @@
-# require 'pry'
+require 'csv'
 
 # wave 1
 def stores_letters
@@ -116,4 +116,12 @@ def highest_score_from(words)
   end
 
   return winning_word_and_score
+end
+
+# wave 5
+def is_in_english_dict?(input)
+  CSV.open("assets/dictionary-english.csv", "r").each do |word|
+    return true if word.include?(input.downcase)
+  end
+  return false
 end
