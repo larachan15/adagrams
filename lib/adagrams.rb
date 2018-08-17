@@ -83,7 +83,12 @@ def score_word(word)
   end
   return score
 
+<<<<<<< HEAD
 # # wave 4
+=======
+
+# wave 4
+>>>>>>> a822e4ea4fb8cda5a14f226af452d912f1b5e282
 def highest_score_from(words)
 
   winning_word_and_score = {
@@ -96,10 +101,20 @@ def highest_score_from(words)
     if score > winning_word_and_score[:score]
       winning_word_and_score[:score] = score
       winning_word_and_score[:word] = word
-    # elsif score == winning_word_and_score[:score]
-    #   if winning_word_and_score[:word].length == 10
-    #     winning_word_and_score[:word]
-    #
+    elsif score == winning_word_and_score[:score] #if it is a tie
+      # if current word has 10 letters and current winner does not,
+      # current word becomes new current winner.
+      if word.length == 10 && winning_word_and_score[:word].length != 10
+        winning_word_and_score[:word] = word
+      # is current word has less letters than current winner,
+      # and current winner has less than 10 letters, current word
+      # becomes new current winner.
+      # backslash at the end of the line allows the line to continue onto the
+      # next line.
+      elsif (word.length < winning_word_and_score[:word].length) \
+        && (winning_word_and_score[:word].length != 10)
+        winning_word_and_score[:word] = word
+      end
     end
   end
 
