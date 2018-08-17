@@ -57,6 +57,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 #     end
 #
 #   end
+
 # # wave 3
 #   describe 'score_word method' do
 #     it 'returns an accurate numerical score according to the score chart' do
@@ -170,4 +171,3 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
       expect(best_word[:score]).must_equal 18
     end
   end
-end
