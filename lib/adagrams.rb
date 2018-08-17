@@ -82,7 +82,7 @@ def score_word(word)
     score += 8
   end
   return score
-
+end
 
 # wave 4
 def highest_score_from(words)
@@ -116,5 +116,4 @@ def highest_score_from(words)
   end
 
   return winning_word_and_score
-  end
 end

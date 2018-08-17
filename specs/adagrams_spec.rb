@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/skip_dsl'
 
-require_relative'../lib/adagrams'
+require_relative '../lib/adagrams'
 
 # Get that nice colorized output
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
@@ -28,7 +28,7 @@ describe 'Adagrams' do
   end
 
 # wave 2
-#   describe 'uses_available_letters? method' do
+  describe 'uses_available_letters? method' do
     it 'returns true if the submitted letters are valid against the drawn letters' do
       drawn_letters = ['D', 'O', 'G', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
       test_word = 'DOG'
