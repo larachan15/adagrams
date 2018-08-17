@@ -82,8 +82,8 @@ def score_word(word)
   return score
 end
 
-#
-# # wave 4
+
+# wave 4
 def highest_score_from(words)
 
   winning_word_and_score = {
@@ -96,60 +96,22 @@ def highest_score_from(words)
     if score > winning_word_and_score[:score]
       winning_word_and_score[:score] = score
       winning_word_and_score[:word] = word
-    # elsif score == winning_word_and_score[:score]
-    #   if winning_word_and_score[:word].length == 10
-    #     winning_word_and_score[:word]
-    #
+    elsif score == winning_word_and_score[:score] #if it is a tie
+      # if current word has 10 letters and current winner does not,
+      # current word becomes new current winner.
+      if word.length == 10 && winning_word_and_score[:word].length != 10
+        winning_word_and_score[:word] = word
+      # is current word has less letters than current winner,
+      # and current winner has less than 10 letters, current word
+      # becomes new current winner.
+      # backslash at the end of the line allows the line to continue onto the
+      # next line.
+      elsif (word.length < winning_word_and_score[:word].length) \
+        && (winning_word_and_score[:word].length != 10)
+        winning_word_and_score[:word] = word
+      end
     end
   end
 
-
-
   return winning_word_and_score
 end
-
-
-
-
-
-
-
-#   best_word = nil
-#   max_score = 0
-#   max_word = ""
-#   max_scores = []
-#
-#
-# binding.pry
-#   words.each do |word|
-#
-    # if word[:score] > max_score
-    #   max_score = word[:score]
-    #   max_word = word[:word]
-    #   best_word << {word: max_word, score: max_score}
-    # end
-#     return
-#
-#   end
-
-
-
-# binding.pry
-  #
-  # word_and_score.each do |highest_score|
-  #   if highest_score[:score] == max_score
-  #     best_word = highest_score[:word]
-  #     max_scores << {word: best_word, score: max_score}
-  #   end
-  # end
-# binding.pry
-# puts highest_score_from
-
-# best_words = highest_score_from
-#
-#
-# highest_score = 0
-# score_word.each do |score|
-#
-#
-# return hash
