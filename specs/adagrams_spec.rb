@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/skip_dsl'
 
-require_relative '../lib/adagrams'
+require_relative'../lib/adagrams'
 
 # Get that nice colorized output
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
@@ -28,8 +28,7 @@ describe 'Adagrams' do
   end
 
 # wave 2
-  describe 'uses_available_letters? method' do
-
+#   describe 'uses_available_letters? method' do
     it 'returns true if the submitted letters are valid against the drawn letters' do
       drawn_letters = ['D', 'O', 'G', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
       test_word = 'DOG'
@@ -59,7 +58,6 @@ describe 'Adagrams' do
 
   end
 
-
 # wave 3
   describe 'score_word method' do
     it 'returns an accurate numerical score according to the score chart' do
@@ -85,7 +83,7 @@ describe 'Adagrams' do
     end
   end
 #
-#
+
 # wave 4
   describe 'highest_score_from method' do
     it 'returns a hash that contains the word and score of best word in an array' do
@@ -174,4 +172,5 @@ describe 'Adagrams' do
       expect(best_word[:score]).must_equal 18
     end
   end
+
 end

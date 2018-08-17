@@ -1,4 +1,5 @@
 # require 'pry'
+
 # wave 1
 def stores_letters
   letters = [ "A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "F", "F", "G", "G", "G", "H", "H", "I", "I", "I", "I", "I", "I", "I", "I", "I", "J", "K", "L", "L", "L", "L", "M", "M", "N", "N", "N", "N", "N", "N", "O", "O", "O", "O", "O", "O", "O", "O", "P", "P", "Q", "R", "R", "R", "R", "R", "R", "S", "S", "S", "S", "T", "T", "T", "T", "T", "T", "U", "U", "U", "U", "V", "V", "W", "W", "X", "Y", "Y", "Z" ]
@@ -11,7 +12,7 @@ end
 
 def welcome
   puts "Welcome to adagrams. Here are your letters."
-  shuffle_letters
+  draw_letters
 end
 
 
@@ -37,6 +38,7 @@ def uses_available_letters?(input, letters_in_hand)
   end
   return true
 end
+
 
 # wave 3
 def score_word(word)
@@ -80,10 +82,13 @@ def score_word(word)
     score += 8
   end
   return score
-end
 
+<<<<<<< HEAD
+# # wave 4
+=======
 
 # wave 4
+>>>>>>> a822e4ea4fb8cda5a14f226af452d912f1b5e282
 def highest_score_from(words)
 
   winning_word_and_score = {
@@ -115,4 +120,5 @@ def highest_score_from(words)
   end
 
   return winning_word_and_score
+  end
 end
