@@ -86,92 +86,92 @@ describe 'Adagrams' do
   end
 #
 #
-# # wave 4
-#   describe 'highest_score_from method' do
-#     it 'returns a hash that contains the word and score of best word in an array' do
-#       words = ['X', 'XX', 'XXX', 'XXXX']
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'XXXX'
-#       expect(best_word[:score]).must_equal 32
-#     end
-#
-#     it 'accurately finds best scoring word even if not sorted' do
-#       words = ['XXX', 'XXXX', 'XX', 'X']
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'XXXX'
-#       expect(best_word[:score]).must_equal 32
-#     end
-#
-#     it 'in case of tied score, prefers the word with fewer letters' do
-#       # the character 'M' is worth 3 points, 'W' is 4 points
-#       words = ['MMMM', 'WWW']
-#
-#       # verify both have a score of 12
-#       expect(score_word(words.first)).must_equal 12
-#       expect(score_word(words.last)).must_equal 12
-#
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'WWW'
-#       expect(best_word[:score]).must_equal 12
-#     end
-#
-#     it 'in case of tied score, prefers the word with fewer letters regardless of order' do
-#       # the character 'M' is worth 3 points, 'W' is 4 points
-#       words = ['WWW', 'MMMM']
-#
-#       # verify both have a score of 12
-#       expect(score_word(words.first)).must_equal 12
-#       expect(score_word(words.last)).must_equal 12
-#
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'WWW'
-#       expect(best_word[:score]).must_equal 12
-#     end
-#
-#     it 'in case of tied score, prefers most the word with 10 letters' do
-#       # the character 'A' is worth 1 point, 'B' is 3 points
-#       words = ['AAAAAAAAAA', 'BBBBBB']
-#
-#       # verify both have a score of 10
-#       expect(score_word(words.first)).must_equal 18
-#       expect(score_word(words.last)).must_equal 18
-#
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'AAAAAAAAAA'
-#       expect(best_word[:score]).must_equal 18
-#     end
-#
-#     it 'in case of tied score, prefers most the word with 10 letters regardless of order' do
-#       # the character 'A' is worth 1 point, 'B' is 3 points
-#       words = ['BBBBBB', 'AAAAAAAAAA']
-#
-#       # verify both have a score of 10
-#       expect(score_word(words.first)).must_equal 18
-#       expect(score_word(words.last)).must_equal 18
-#
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'AAAAAAAAAA'
-#       expect(best_word[:score]).must_equal 18
-#     end
-#
-#     it 'in case of tied score and same length words, prefers the first word' do
-#       # the character 'A' is worth 1 point, 'E' is 1 point
-#       words = ['AAAAAAAAAA', 'EEEEEEEEEE']
-#
-#       # verify both have a score of 10
-#       expect(score_word(words.first)).must_equal 18
-#       expect(score_word(words.last)).must_equal 18
-#
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal words.first
-#       expect(best_word[:score]).must_equal 18
-#     end
-#   end
+# wave 4
+  describe 'highest_score_from method' do
+    it 'returns a hash that contains the word and score of best word in an array' do
+      words = ['X', 'XX', 'XXX', 'XXXX']
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'XXXX'
+      expect(best_word[:score]).must_equal 32
+    end
+
+    it 'accurately finds best scoring word even if not sorted' do
+      words = ['XXX', 'XXXX', 'XX', 'X']
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'XXXX'
+      expect(best_word[:score]).must_equal 32
+    end
+
+    it 'in case of tied score, prefers the word with fewer letters' do
+      # the character 'M' is worth 3 points, 'W' is 4 points
+      words = ['MMMM', 'WWW']
+
+      # verify both have a score of 12
+      expect(score_word(words.first)).must_equal 12
+      expect(score_word(words.last)).must_equal 12
+
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'WWW'
+      expect(best_word[:score]).must_equal 12
+    end
+
+    it 'in case of tied score, prefers the word with fewer letters regardless of order' do
+      # the character 'M' is worth 3 points, 'W' is 4 points
+      words = ['WWW', 'MMMM']
+
+      # verify both have a score of 12
+      expect(score_word(words.first)).must_equal 12
+      expect(score_word(words.last)).must_equal 12
+
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'WWW'
+      expect(best_word[:score]).must_equal 12
+    end
+
+    it 'in case of tied score, prefers most the word with 10 letters' do
+      # the character 'A' is worth 1 point, 'B' is 3 points
+      words = ['AAAAAAAAAA', 'BBBBBB']
+
+      # verify both have a score of 10
+      expect(score_word(words.first)).must_equal 18
+      expect(score_word(words.last)).must_equal 18
+
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'AAAAAAAAAA'
+      expect(best_word[:score]).must_equal 18
+    end
+
+    it 'in case of tied score, prefers most the word with 10 letters regardless of order' do
+      # the character 'A' is worth 1 point, 'B' is 3 points
+      words = ['BBBBBB', 'AAAAAAAAAA']
+
+      # verify both have a score of 10
+      expect(score_word(words.first)).must_equal 18
+      expect(score_word(words.last)).must_equal 18
+
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'AAAAAAAAAA'
+      expect(best_word[:score]).must_equal 18
+    end
+
+    it 'in case of tied score and same length words, prefers the first word' do
+      # the character 'A' is worth 1 point, 'E' is 1 point
+      words = ['AAAAAAAAAA', 'EEEEEEEEEE']
+
+      # verify both have a score of 10
+      expect(score_word(words.first)).must_equal 18
+      expect(score_word(words.last)).must_equal 18
+
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal words.first
+      expect(best_word[:score]).must_equal 18
+    end
+  end
 end
